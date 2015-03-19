@@ -1,0 +1,3 @@
+<apex:page controller="GS_RestApiController" action="{!execute}" contenttype="text/javascript" showHeader="false" sidebar="false">
+    <apex:outputText value="{!response}" escape="false"/>
+</apex:page>

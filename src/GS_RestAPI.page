@@ -1,3 +1,0 @@
-<apex:page controller="GS_RestController" contenttype="text/javascript" action="{!execute}">
-    <apex:outputText value="{!response}" escape="false"/>
-</apex:page>

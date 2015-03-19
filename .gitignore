@@ -1,12 +1,22 @@
-*.class
+# Sumlime Text Mavens Mate Project Files Ignore
+apex-scripts/
+config/
+deploy/
+backup/
+debug/
+*.sublime-project
+*.sublime-settings
+*.sublime-workspace
 
-# Mobile Tools for Java (J2ME)
-.mtj.tmp/
+###
+### Not Ignored for now
+###
+# Eclipse Force.com IDE files ignore
+#.project
+#.setting/
+#salesforce.schema
 
-# Package Files #
-*.jar
-*.war
-*.ear
+#
+private*.properties
 
-# virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
-hs_err_pid*
+.gradle/

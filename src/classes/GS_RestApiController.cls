@@ -1,4 +1,4 @@
-public class GS_RestController {
+public class GS_RestApiController {
 
     private static final String COMMAND_NAME_PARAM = 'command';
 
@@ -8,23 +8,23 @@ public class GS_RestController {
 
     public String response {get; private set;}
 
-    public GS_RestController() {
+    public GS_RestApiController() {
     }
 
     private GS_CommandContainer.GS_ICommand chooseCommand() {
 
         Map<String, String> parameters = ApexPages.currentPage().getParameters();
 
-        String commandName = parameters.get(COMMAND_NAME_PARAM)
+        String commandName = parameters.get(COMMAND_NAME_PARAM);
 
         if (commandAliasNameMap.containsKey(commandName)) {
-            commandName = commandAliasNameMap.get(commandName)
+            commandName = commandAliasNameMap.get(commandName);
         }
         
-        return GS_CommandContainer.GS_CommandFactory.create(commandName);
+        return GS_CommandFactory.create(commandName);
     }
 
     public void execute() {
-        this.response = chooseCommand().execute().toJSON();
+        //this.response = chooseCommand().execute();
     }
 }
