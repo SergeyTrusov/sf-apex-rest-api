@@ -29,20 +29,35 @@ public class GS_CommandContainer {
     }
 
     public class GS_FirstTestCommand extends GS_Command {
+
         public override Object perform() {
-            return null;
+            return 'FirstTestResult + Params : ' + params;
+        }
+
+        public override String getMessage() {
+            return 'FirstTestMessage';
         }
     }
 
     public class GS_SecondTestCommand extends GS_Command {
+
         public override Object perform() {
-            return null;
+            return 'SecondTestResult + Params : ' + params;
+        }
+
+        public override String getMessage() {
+            return 'SecondTestMessage';
         }
     }
 
     public class GS_DefaultCommand extends GS_Command {
+
         public override Object perform() {
-            return null;
+            return 'This is defult result.';
+        }
+
+        public override String getMessage() {
+            return 'This is default message.';
         }
     }
 }

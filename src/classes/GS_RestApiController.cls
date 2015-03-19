@@ -11,10 +11,10 @@ public class GS_RestApiController {
     public GS_RestApiController() { }
 
     public void execute() {
-        //this.response = chooseCommand().execute();
+        this.response = getCommand().execute().toJSON();
     }
 
-    private GS_CommandContainer.GS_Command chooseCommand() {
+    private GS_CommandContainer.GS_Command getCommand() {
 
         Map<String, String> params = ApexPages.currentPage().getParameters();
 
