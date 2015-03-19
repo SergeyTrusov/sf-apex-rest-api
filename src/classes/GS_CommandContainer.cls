@@ -8,39 +8,41 @@ public class GS_CommandContainer {
             this.params = params;
         }
 
-        //public String execute() {
-        //    try {
-        //        GS_Result resultObject = perform();
-        //        return GS_WSResult.toJSON(
-        //            GS_StatusCode.OK, 
-        //            getMessage(),
-        //            resultObject);
-        //    } catch (GS_Exception e) {
-        //        String message = GS_SettingsProvider.isDebugMode() ? e.getMessage() + e.getStackTraceString() : e.getMessage();
-        //        return GS_WSResult.toJSON(GS_StatusCode.ERROR, message);
-        //    } catch (Exception e) {
-        //        String message = GS_SettingsProvider.isDebugMode() ? e.getMessage() + e.getStackTraceString() 
-        //            : GSTWCConstants.UNEXPECTED_ERORR;
-        //        return GS_WSResult.toJSON(GS_StatusCode.ERROR, message);
-        //    }
-        //}
+        public GS_RestResponse execute() {
+            try {
+                Object resultObject = perform();
+                return new GS_RestResponse(GS_StatusCode.OK, getMessage(), resultObject);
+            } catch (GS_Exception exp) {
+                String message = exp.getMessage() + exp.getStackTraceString();
+                return new GS_RestResponse(GS_StatusCode.ERROR, message);
+            } catch (Exception exp) {
+                String message =  exp.getMessage() + exp.getStackTraceString();
+                return new GS_RestResponse(GS_StatusCode.ERROR, message);
+            }
+        }
 
-        //public abstract GS_Result perform(String jsonParameter);
+        public abstract Object perform();
 
-        //public virtual String getMessage() {
-        //    return null; 
-        //}
+        public virtual String getMessage() {
+            return null; 
+        }
     }
 
     public class GS_FirstTestCommand extends GS_Command {
-        
+        public override Object perform() {
+            return null;
+        }
     }
 
     public class GS_SecondTestCommand extends GS_Command {
-        
+        public override Object perform() {
+            return null;
+        }
     }
 
     public class GS_DefaultCommand extends GS_Command {
-        
+        public override Object perform() {
+            return null;
+        }
     }
 }

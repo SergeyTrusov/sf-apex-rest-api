@@ -1,14 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Package xmlns="http://soap.sforce.com/2006/04/metadata">
-    <types>
-        <members>GS_CommandContainer</members>
-        <members>GS_CommandFactory</members>
-        <members>GS_RestApiController</members>
-        <name>ApexClass</name>
-    </types>
-    <types>
-        <members>GS_RestApi</members>
-        <name>ApexPage</name>
-    </types>
-    <version>32.0</version>
+	<types>
+		<members>GS_CommandContainer</members>
+		<members>GS_CommandFactory</members>
+		<members>GS_Exception</members>
+		<members>GS_RestApiController</members>
+		<members>GS_RestResponse</members>
+		<members>GS_StatusCode</members>
+		<name>ApexClass</name>
+	</types>
+	<types>
+		<members>GS_RestApi</members>
+		<name>ApexPage</name>
+	</types>
+	<version>28.0</version>
 </Package>

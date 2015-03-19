@@ -1,0 +1,1 @@
+public class GS_Exception extends Exception { }
