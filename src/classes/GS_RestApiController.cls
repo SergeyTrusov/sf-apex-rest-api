@@ -8,23 +8,24 @@ public class GS_RestApiController {
 
     public String response {get; private set;}
 
-    public GS_RestApiController() {
+    public GS_RestApiController() { }
+
+    public void execute() {
+        //this.response = chooseCommand().execute();
     }
 
-    private GS_CommandContainer.GS_ICommand chooseCommand() {
+    private GS_CommandContainer.GS_Command chooseCommand() {
 
-        Map<String, String> parameters = ApexPages.currentPage().getParameters();
+        Map<String, String> params = ApexPages.currentPage().getParameters();
 
-        String commandName = parameters.get(COMMAND_NAME_PARAM);
+        String commandName = params.get(COMMAND_NAME_PARAM);
 
         if (commandAliasNameMap.containsKey(commandName)) {
             commandName = commandAliasNameMap.get(commandName);
         }
         
-        return GS_CommandFactory.create(commandName);
-    }
+        params.remove(COMMAND_NAME_PARAM);
 
-    public void execute() {
-        //this.response = chooseCommand().execute();
+        return GS_CommandFactory.create(commandName, params);
     }
 }

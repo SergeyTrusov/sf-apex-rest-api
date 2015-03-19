@@ -1,11 +1,12 @@
 public class GS_CommandContainer {
 
-    public interface GS_ICommand {
-        //execute();
-        //perform();
-    }
+    public abstract class GS_Command {
 
-    public abstract class GS_CommandBase implements GS_ICommand {
+        private Map<String, String> params = new Map<String, String>();
+
+        public void setParams(Map<String, String> params) {
+            this.params = params;
+        }
 
         //public String execute() {
         //    try {
@@ -31,15 +32,15 @@ public class GS_CommandContainer {
         //}
     }
 
-    public class GS_FirstTestCommand extends GS_CommandBase {
+    public class GS_FirstTestCommand extends GS_Command {
         
     }
 
-    public class GS_SecondTestCommand extends GS_CommandBase {
+    public class GS_SecondTestCommand extends GS_Command {
         
     }
 
-    public class GS_DefaultCommand extends GS_CommandBase {
+    public class GS_DefaultCommand extends GS_Command {
         
     }
 }
